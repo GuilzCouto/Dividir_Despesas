@@ -18,11 +18,11 @@
         <input id="traveller" name="traveller" type="text" placeholder="Nome do Viajante">
         <button id="buttonAddTraveller" onclick="addTraveller()">Adicionar Viajante</button>
         <h2>Despesas</h2>
-        <p>(Des)Marque os viajantes que participaram da despesa antes de clicar adicionar</p>
         <input id="Name" name="Name" type="text" placeholder="Nome da Despesa">
-        <input id="quantity" name="quantity" type="number" min="0,01" placeholder="Quantidade">
-        <input id="unitaryValue" name="unitaryValue" type="number" min="0,01" placeholder="Valor Unitário(R$)">
+        <input id="quantity" name="quantity" type="number" min="1" placeholder="Quantidade">
+        <input id="unitaryValue" name="unitaryValue" type="number" min="1" placeholder="Valor Unitário(R$)">
         <form method="get" id="people"></form>
+        <p id="observation">Somente os viajantes marcados acima farão parte da divisão da despesa adicionada</p>
         <button id="buttonAddExpense" onclick="addExpense()" id="send">Adicionar Despesa</button>
         
         <div id="expensePosted">
