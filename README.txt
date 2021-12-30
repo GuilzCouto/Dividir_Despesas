@@ -1,7 +1,7 @@
 Página Web Custo Viagem
 Página feita para o desafio do Programa de formação em Mobile da stone
 
-Para executar basta abrir o arquivo index.html
+Para executar, faça o download de todos os arquivos, mantendo os arquivos nas pastas e abrindo o arquivo index.html
 
 O que foi feito:
 *Função que aceita a inserção de nomes, para listar os viajantes e dividir o valor das despesas corretamente entre os participantes.
