@@ -9,7 +9,7 @@ let inputValue = document.getElementById("unitaryValue"); //Recebe valor digitad
 var qttTotalEvent = 0; //Contabiliza o número total de despesas adicionadas pela função adicionar
 var qttTotalValue = 0; //Contabiliza o valor total gasto de despesas adicionadas pela função adicionar
 let result = document.getElementById("result"); //Recebe texto da div com id resultado
-let participants = []; //Recebe matriz de participantes com os valores de cada despesa
+let Participants = []; //Recebe matriz de participantes com os valores de cada despesa
 let expenseList = []; //Recebe matriz de despesas com todos os dados informados
 let people = document.getElementById("people"); //Recebe formulário de viajantes incluídos
 let value = 0; //Contabiliza e da valor as pessoas incluídos
@@ -36,8 +36,9 @@ document.getElementById("traveller").addEventListener("input", function(event){
 function addTraveller() {
     let NameOfTraveller = inputNameOfTraveller.value;
     people.innerHTML += `<input type="checkbox" value=${value} id="people" checked >${NameOfTraveller}</input>`;
-    participants.push([NameOfTraveller,0]);
+    Participants.push([NameOfTraveller,0]);
     value++;
+    ClearFields() //Cahama a função que limpa os campos preenchidos
 }
 
 //desabilita o botão de adicionar despesa
@@ -77,7 +78,7 @@ function addExpense() {
     
     checkBox.forEach(function(el){
         if(el.checked){
-            participants[el.value][1] += ValueOfTraveller;
+            Participants[el.value][1] += ValueOfTraveller;
         }
     });
     qttTotalEvent = qttTotalEvent + 1;
@@ -91,7 +92,8 @@ function addExpense() {
     com a quantidade ${expenseList[(qttTotalEvent)-1][1]} e valor unitário 
     R$${expenseList[(qttTotalEvent)-1][2]}, totalizando R$${expenseList[(qttTotalEvent)-1][3]}.</p>`
 
-    Total()
+    Total() // Chama a função Total
+    ClearFields() //Cahama a função que limpa os campos preenchidos
 }
 
 //Função Total - Imprime na página 2 relatórios finais, 
@@ -101,13 +103,23 @@ function addExpense() {
 
 function Total() {
              
-    result.innerHTML = `<br><p>Nesta viagem, fomos ${participants.length} amigos </p>`
+    result.innerHTML = `<br><p>Nesta viagem, fomos ${Participants.length} amigos </p>`
     result.innerHTML += `<p>foram lançados ${qttTotalEvent} despesas </p>`
     result.innerHTML += `<p>somadas totalizam R$ ${qttTotalValue}</p>`
-    result.innerHTML += `<p>se dividirmos tudo por todos ficaria R$ ${Math.ceil( qttTotalValue / participants.length)} por pessoa</p>`
+    result.innerHTML += `<p>se dividirmos tudo por todos ficaria R$ ${Math.ceil( qttTotalValue / Participants.length)} por pessoa</p>`
     result.innerHTML += `<br><p>O débito por viajante é de:</p>`
 
-    for (let x = 0; x < participants.length; x++){
-        result.innerHTML += `<p> ${participants[x][0]} gastou R$ ${participants[x][1]},00 </p>`
+    for (let x = 0; x < Participants.length; x++){
+        result.innerHTML += `<p> ${Participants[x][0]} gastou R$ ${Participants[x][1]},00 </p>`
     }
+}
+
+//A função clearfields foi feita para limpar os campos após a inclusão dos dados
+function ClearFields() {
+
+  document.getElementById("traveller").value = "";
+  document.getElementById("Name").value = "";
+  document.getElementById("quantity").value = "";
+  document.getElementById("unitaryValue").value = "";
+
 }
