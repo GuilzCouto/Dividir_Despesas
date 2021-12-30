@@ -9,6 +9,7 @@ O que foi feito:
 *Função para inserir despesas, com nome, quantidade e valor.
 *Bloqueio do botão de inserir despesa caso não preencha o valor da despesa ou o mesmo seja 0.
 *Função de impressão de dados, atualizado automaticamente ao inserir despesa, para maior controle em tempo real.
+*Função que limpa os campos preenchidos, após a inclusão dos dados.
 
 Para que serve:
 A partir de inserções de dados do usuário, a página cria matrizes para controle de pagamentos de despesas por viajante inserido e selecionado.
