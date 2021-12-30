@@ -14,7 +14,7 @@ Para que serve:
 A partir de inserções de dados do usuário, a página cria matrizes para controle de pagamentos de despesas por viajante inserido e selecionado.
 
 
-BiBliotecas:
+Bibliotecas:
 HTML
 CSS
 JAVASCRIPT
