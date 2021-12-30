@@ -9,7 +9,7 @@ let inputValue = document.getElementById("unitaryValue"); //Recebe valor digitad
 var qttTotalEvent = 0; //Contabiliza o número total de despesas adicionadas pela função adicionar
 var qttTotalValue = 0; //Contabiliza o valor total gasto de despesas adicionadas pela função adicionar
 let result = document.getElementById("result"); //Recebe texto da div com id resultado
-let Participants = []; //Recebe matriz de participantes com os valores de cada despesa
+let participants = []; //Recebe matriz de participantes com os valores de cada despesa
 let expenseList = []; //Recebe matriz de despesas com todos os dados informados
 let people = document.getElementById("people"); //Recebe formulário de viajantes incluídos
 let value = 0; //Contabiliza e da valor as pessoas incluídos
@@ -36,7 +36,7 @@ document.getElementById("traveller").addEventListener("input", function(event){
 function addTraveller() {
     let NameOfTraveller = inputNameOfTraveller.value;
     people.innerHTML += `<input type="checkbox" value=${value} id="people" checked >${NameOfTraveller}</input>`;
-    Participants.push([NameOfTraveller,0]);
+    participants.push([NameOfTraveller,0]);
     value++;
 }
 
@@ -77,7 +77,7 @@ function addExpense() {
     
     checkBox.forEach(function(el){
         if(el.checked){
-            Participants[el.value][1] += ValueOfTraveller;
+            participants[el.value][1] += ValueOfTraveller;
         }
     });
     qttTotalEvent = qttTotalEvent + 1;
@@ -101,13 +101,13 @@ function addExpense() {
 
 function Total() {
              
-    result.innerHTML = `<br><p>Nesta viagem, fomos ${Participants.length} amigos </p>`
+    result.innerHTML = `<br><p>Nesta viagem, fomos ${participants.length} amigos </p>`
     result.innerHTML += `<p>foram lançados ${qttTotalEvent} despesas </p>`
     result.innerHTML += `<p>somadas totalizam R$ ${qttTotalValue}</p>`
-    result.innerHTML += `<p>se dividirmos tudo por todos ficaria R$ ${Math.ceil( qttTotalValue / Participants.length)} por pessoa</p>`
+    result.innerHTML += `<p>se dividirmos tudo por todos ficaria R$ ${Math.ceil( qttTotalValue / participants.length)} por pessoa</p>`
     result.innerHTML += `<br><p>O débito por viajante é de:</p>`
 
-    for (let x = 0; x < Participants.length; x++){
-        result.innerHTML += `<p> ${Participants[x][0]} gastou R$ ${Participants[x][1]},00 </p>`
+    for (let x = 0; x < participants.length; x++){
+        result.innerHTML += `<p> ${participants[x][0]} gastou R$ ${participants[x][1]},00 </p>`
     }
 }
