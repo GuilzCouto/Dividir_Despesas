@@ -20,8 +20,8 @@
         <h2>Despesas</h2>
         <p>(Des)Marque os viajantes que participaram da despesa antes de clicar adicionar</p>
         <input id="Name" name="Name" type="text" placeholder="Nome da Despesa">
-        <input id="quantity" name="quantity" type="number" placeholder="Quantidade">
-        <input id="unitaryValue" name="unitaryValue" type="number" placeholder="Valor Unitário(R$)">
+        <input id="quantity" name="quantity" type="number" min="0,01" placeholder="Quantidade">
+        <input id="unitaryValue" name="unitaryValue" type="number" min="0,01" placeholder="Valor Unitário(R$)">
         <form method="get" id="people"></form>
         <button id="buttonAddExpense" onclick="addExpense()" id="send">Adicionar Despesa</button>
         
