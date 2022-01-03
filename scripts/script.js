@@ -93,7 +93,7 @@ function addExpense() {
     R$${expenseList[(qttTotalEvent)-1][2]}, totalizando R$${expenseList[(qttTotalEvent)-1][3]}.</p>`
 
     Total() // Chama a função Total
-    ClearFields() //Cahama a função que limpa os campos preenchidos
+    ClearFields() //Chama a função que limpa os campos preenchidos
 }
 
 //Função Total - Imprime na página 2 relatórios finais, 
