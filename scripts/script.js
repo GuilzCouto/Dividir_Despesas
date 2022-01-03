@@ -118,8 +118,10 @@ function Total() {
 function ClearFields() {
 
   document.getElementById("traveller").value = "";
+  document.getElementById("buttonAddTraveller").disabled = true;
   document.getElementById("Name").value = "";
   document.getElementById("quantity").value = "";
   document.getElementById("unitaryValue").value = "";
+  document.getElementById("buttonAddExpense").disabled = true;
 
 }
