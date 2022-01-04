@@ -38,7 +38,7 @@ function addTraveller() {
     people.innerHTML += `<input type="checkbox" value=${value} id="people" checked >${NameOfTraveller}</input>`;
     Participants.push([NameOfTraveller,0]);
     value++;
-    ClearFields() //Cahama a função que limpa os campos preenchidos
+    ClearFields() //Chama a função que limpa os campos preenchidos
 }
 
 //desabilita o botão de adicionar despesa
