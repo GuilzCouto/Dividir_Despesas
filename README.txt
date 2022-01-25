@@ -1,5 +1,4 @@
 Página Web Custo Viagem
-Página feita para o desafio do Programa de formação em Mobile da stone
 
 Para executar, faça o download de todos os arquivos, mantendo os arquivos nas pastas e abrindo o arquivo index.html
 
@@ -13,7 +12,6 @@ O que foi feito:
 
 Para que serve:
 A partir de inserções de dados do usuário, a página cria matrizes para controle de pagamentos de despesas por viajante inserido e selecionado.
-
 
 Bibliotecas:
 HTML
